@@ -134,23 +134,7 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        registerReceiver(messageBroadcastReceiver, intentFilter);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            registerReceiver(messageBroadcastReceiver, intentFilter, Context.RECEIVER_EXPORTED);
-        } else {
-            registerReceiver(messageBroadcastReceiver, intentFilter);
-        }
-    }
 
-    @Override
-    protected void onPause() {
-        unregisterReceiver(messageBroadcastReceiver);
-        super.onPause();
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
